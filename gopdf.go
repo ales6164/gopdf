@@ -342,7 +342,7 @@ func (gp *GoPdf) Start(config Config) {
 
 // SetFontWithStyle : set font style support Regular or Underline
 // for Bold|Italic should be loaded apropriate fonts with same styles defined
-func (gp *GoPdf) SetFontWithStyle(family string, style int, size int) error {
+func (gp *GoPdf) SetFontWithStyle(family string, style int, size float64) error {
 
 	found := false
 	i := 0
@@ -374,7 +374,7 @@ func (gp *GoPdf) SetFontWithStyle(family string, style int, size int) error {
 
 //SetFont : set font style support "" or "U"
 // for "B" and "I" should be loaded apropriate fonts with same styles defined
-func (gp *GoPdf) SetFont(family string, style string, size int) error {
+func (gp *GoPdf) SetFont(family string, style string, size float64) error {
 	return gp.SetFontWithStyle(family, getConvertedStyle(style), size)
 }
 

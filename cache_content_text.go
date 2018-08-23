@@ -18,7 +18,7 @@ type cacheContentText struct {
 	textColor      Rgb
 	grayFill       float64
 	fontCountIndex int //Curr.Font_FontCount+1
-	fontSize       int
+	fontSize       float64
 	fontStyle      int
 	setXCount      int //จำนวนครั้งที่ใช้ setX
 	x, y           float64
@@ -258,7 +258,7 @@ func (c *cacheContentText) createContent() (float64, float64, error) {
 	return cellWidthPdfUnit, cellHeightPdfUnit, nil
 }
 
-func createContent(f *SubsetFontObj, text string, fontSize int, rectangle *Rect) (float64, float64, float64, error) {
+func createContent(f *SubsetFontObj, text string, fontSize float64, rectangle *Rect) (float64, float64, float64, error) {
 
 	unitsPerEm := int(f.ttfp.UnitsPerEm())
 	var leftRune rune
@@ -334,7 +334,7 @@ func (c *CacheContent) Setup(rectangle *Rect,
 	textColor Rgb,
 	grayFill float64,
 	fontCountIndex int, //Curr.Font_FontCount+1
-	fontSize int,
+	fontSize float64,
 	fontStyle int,
 	setXCount int, //จำนวนครั้งที่ใช้ setX
 	x, y float64,
